@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <script src="angular.min.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <script src="bootstrap.min.js"></script>
+    <script src="JavaScript.js"></script>
+</head>
+<body ng-controller="mycontroller">
+    <div class="container">
+        <div class="col-lg-6">
+            <ul>
+                <li ng-repeat="course in course_data | filter:{status: 'pending'}" style="border:1px solid" >
+                    ID:<span >{{course.id}}</span>
+                    <br />
+                    Name:<span>{{course.name}}</span>
+                    <br />
+                    Tack:<span>{{course.track}}</span>
+                    <br />
+                    Student id:<span>{{course.studentid}}</span>
+                    <br />
+                    Team Id:<span>{{course.teamid}}</span>
+                    <br />
+                    Status:<span>{{course.status}}</span>
+                    <br />
+                    <input type="checkbox" id="fgg" ng-checked="'{{course.status}}'=='approved'" data="{{course.id}}" ng-click="myfunc($event)" />
+                </li>
+
+            </ul>
+            <button ng-click="approve()">Approve</button>
+        </div>
+        <div class="col-lg-6">
+             <li ng-repeat="course in course_data | filter:{status: 'approved'}"  style="border:1px solid" >
+                    ID:<span >{{course.id}}</span>
+                    <br />
+                    Name:<span>{{course.name}}</span>
+                    <br />
+                    Tack:<span>{{course.track}}</span>
+                    <br />
+                    Student id:<span>{{course.studentid}}</span>
+                    <br />
+                    Team Id:<span>{{course.teamid}}</span>
+                    <br />
+                    Status:<span>{{course.status}}</span>
+                    <br />
+                    <input type="checkbox" id="Checkbox1" ng-checked="'{{course.status}}'=='approved'" data="hami" ng-click="myfunc($event)" />
+                </li>
+
+        </div>
+        
+        </div>
+    
+
+
+</body>
+</html>
